@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# input
+if [ $# -eq 0 ]; then
+	unique_int=0017
+else
+	unique_int=$1
+fi
+# output
+echo -n $unique_int | sha256sum | awk '{print $1}' > hash_output.txt
